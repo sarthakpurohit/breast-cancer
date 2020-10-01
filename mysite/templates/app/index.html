@@ -1,0 +1,388 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md  navbar-light fixed-top py-4" id="main-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="{% static 'img/hacklogo.png' %}" width="50" height="50" alt="">
+      <h3 class="d-inline align-middle">Mizuxe</h3>
+    </a>
+    <button class="navbar-toggler" type="button" name="button" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-items">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-items">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-items">
+          <a class="nav-link" href="#authors">Meet The Authors</a>
+        </li>
+        <li class="nav-items">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Showcase -->
+<section id="showcase" class="py-5">
+  <div class="primary-overlay text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-center">
+          <h1 class="display-2 mt-5 pt-5">
+            Do What You Dream Of...
+          </h1>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmo.</p>
+          <a href="#" class="btn btn-outline-secondary btn-lg text-white" ><i class="fas fa-arrow-right"></i>Read More</a>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid d-none d-lg-block" src="{% static 'img/book.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Newsletter -->
+<section id="newsletter" class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <input class="form-control form-control-lg mb-resp" type="text" placeholder="Enter Name">
+        </div>
+        <div class="col-md-4">
+            <input class="form-control form-control-lg mb-resp" type="email" placeholder="Enter Email">
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary btn-lg btn-block" type="button" name="button">
+            <i class="fas fa-envelope-open-o"></i>
+            Subscribe
+          </button>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Boxes -->
+<section id="boxes" class="py-5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="card text-center border-primary mb-resp">
+          <div class="card-body">
+            <h3 class="text-primary">Be Smarter</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center text-white bg-primary mb-resp">
+          <div class="card-body">
+            <h3>Be Better</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center border-primary mb-resp">
+          <div class="card-body">
+            <h3 class="text-primary">Be Faster</h3>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card text-center text-white bg-primary">
+          <div class="card-body">
+            <h3>Be Stronger</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- About / Why Section -->
+<section id="about" class=" py-5 text-center bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="info-header mb-5">
+          <h1 class="text-primary pb-3">
+            Why This Book?
+          </h1>
+          <p class="lead pb-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod tempor incididunt ut labore et dolore?
+          </p>
+        </div>
+
+        <!-- Accordion -->
+        <div class="" id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <div href="#collapse1" data-toggle="collapse" data-parent="#accordian">
+                  <i class="fas fa-arrow-circle-down"></i>Get Inspire
+                </div>
+              </h5>
+            </div>
+            <div class="collapse show" id="collapse1">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <div href="#collapse2" data-toggle="collapse" data-parent="#accordian">
+                  <i class="fas fa-arrow-circle-down"></i>Gain The Knowledge
+                </div>
+              </h5>
+            </div>
+            <div class="collapse" id="collapse2">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              </div>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">
+                <div href="#collapse3" data-toggle="collapse" data-parent="#accordian">
+                  <i class="fas fa-arrow-circle-down"></i>Open Your Mind
+                </div>
+              </h5>
+            </div>
+            <div class="collapse" id="collapse3">
+              <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Authors -->
+<section id="authors" class="my-5 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="info-header mb-5">
+          <h1 class="text-primary pb-3">
+            Meet The Authors
+          </h1>
+          <p class="lead">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod tempor incididunt labore et dolore.
+          </p>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img class="img-fluid rounded-circle w-50 mb-3" src="{% static 'img/person1.jpg' %}" alt="">
+              <h3>Susan Williams</h3>
+              <h5 class="text-muted">Lead Writer</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <div class="d-flex justify-content-center">
+                <div class="p-4">
+                  <a href="http://facebook.com">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://twitter.com">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://instagram.com">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img class="img-fluid rounded-circle w-50 mb-3" src="{% static 'img/person2.jpg' %}" alt="">
+              <h3>Grace Smith</h3>
+              <h5 class="text-muted">Co-Writer</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <div class="d-flex justify-content-center">
+                <div class="p-4">
+                  <a href="http://facebook.com">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://twitter.com">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://instagram.com">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img class="img-fluid rounded-circle w-50 mb-3" src="{% static 'img/person3.jpg' %}" alt="">
+              <h3>John Doe</h3>
+              <h5 class="text-muted">Editor</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <div class="d-flex justify-content-center">
+                <div class="p-4">
+                  <a href="http://facebook.com">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://twitter.com">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://instagram.com">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img class="img-fluid rounded-circle w-50 mb-3" src="{% static 'img/person4.jpg' %}" alt="">
+              <h3>Kevin Swanson</h3>
+              <h5 class="text-muted">Designer</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+              <div class="d-flex justify-content-center">
+                <div class="p-4">
+                  <a href="http://facebook.com">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://twitter.com">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="p-4">
+                  <a href="http://instagram.com">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9">
+        <h3>Get In Touch</h3>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed eiusmod!</p>
+        <form>
+          <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+            </div>
+            <input class="form-control" type="text" name="" placeholder="Name">
+          </div>
+
+          <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input class="form-control" type="email" name="" placeholder="Email">
+          </div>
+
+          <div class="input-group input-group-lg mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-pencil-alt"></i>
+              </span>
+            </div>
+            <textarea class="form-control" placeholder="Message" row="5"></textarea>
+          </div>
+
+          <input type="submit" name="" value="Submit" class="btn btn-primary btn-block btn-lg">
+        </form>
+      </div>
+
+      <div class="col-lg-3 align-self-center">
+        <img class="img-fluid" src="{% static 'img/mlogo.png' %}" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer id="main-footer" class="py-5 bg-primary text-white">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-6 ml-auto">
+        <p class="lead">
+          Copyright &copy; <span id="year"></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% endblock %}
