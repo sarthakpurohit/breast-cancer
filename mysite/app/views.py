@@ -10,44 +10,32 @@ from mysite.settings import EMAIL_HOST_USER
 from django.core.mail import send_mail, EmailMessage
 from django.contrib import messages
 from email_validator import validate_email, EmailNotValidError
+from django.contrib.staticfiles.storage import staticfiles_storage
 # Create your views here.
-
-#
-# def loginworker(request):
-#     if request.method == 'POST':
-#         username = request.POST['username']
-#         password = request.POST['password']
-#
-#         user = auth.authenticate(username=username,password=password)
-#         if user is not None:
-#             auth.login(request,user)
-#             return redirect('dashboardworker')
-#         else:
-#             # messages.error(request,"Invalid Credentials")
-#             return redirect('loginworker')
-#     else:
-#         return render(request,'accounts/loginworker.html')
-#
-
-
-
-
-
 
 # Create your views here.
 def index(request):
-    # mail_subject = "[Activate Account] VE - Virtual Employee"
-    # current_site = get_current_site(request)
-    # message = render_to_string('app/email.html', {
-    #     'user': role_user_email,
-    #     'firstname': user_firstname,
-    #     'lastname': user_lastname,
-    #     'domain': current_site.domain,
-    #     'pass': role_user_password,
-    # })
-    # email = EmailMessage(mail_subject, message, from_email=EMAIL_HOST_USER, to=[role_user_email])
-    # email.send()
-     return render(request,'app/index.html')
+    if request.method=="POST":
+        print("Hello")
+        if 'newsrequest' in request.POST:
+            email=request.POST['email']
+            name=request.POST['name']
+            mail_subject = "[Activate Account] VE - Virtual Employee"
+            current_site = get_current_site(request)
+            message = render_to_string('app/email.html', {
+                'user': email,
+                'firstname': name,
+                'domain': current_site.domain,
+                # 'pass': role_user_password,
+            })
+            email = EmailMessage(mail_subject, message, from_email=EMAIL_HOST_USER, to=[email])
+            url = staticfiles_storage.url('img/book.png')
+            # path=open(url,rb);
+            email.attach("book.png","../static/img/book.png")
+            email.send()
+            return redirect(request.path_info)
+
+    return render(request,'app/index.html')
 
 def userlogin(request):
     if request.method == 'POST':
