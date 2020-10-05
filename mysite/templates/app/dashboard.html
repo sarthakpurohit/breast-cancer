@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md  navbar-light fixed-top py-4" id="main-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      <img src="{% static 'img/hacklogo.png' %}" width="50" height="50" alt="">
+      <h3 class="d-inline align-middle">Mizuxe</h3>
+    </a>
+    <button class="navbar-toggler" type="button" name="button" data-toggle="collapse" data-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-items">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-items">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-items">
+          <a class="nav-link" href="{% url 'userlogin' %}">Doctor Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<!-- FILE UPLOAD -->
+
+<section>
+  <div class="container p-5">
+    <!-- For demo purpose -->
+    <div class="row mb-5 text-center text-white">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="display-4">Detect Breast Cancer using AI</h1>
+        <h3>Upload Breast cancer histopathological image</h3>
+      </div>
+    </div>
+    <!-- End -->
+
+
+    <div class="row">
+      <div class="col-lg-5 mx-auto">
+      <div class="p-5 bg-white shadow rounded-lg"><img src="{% static 'img/upload.png' %}" alt="" width="400" class="d-block mx-auto mb-4 rounded-pill">
+
+
+<center>
+
+      <form>
+  <div class="form-group">
+  <label for="exampleFormControlFile1">Insert file</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div>
+</form>
+</center>
+   </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
