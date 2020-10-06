@@ -14,6 +14,11 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 # Create your views here.
 from .models import ImageUpload
 from django.contrib import messages
+
+
+from .inference import predict
+
+
 # Create your views here.
 def index(request):
     if request.method=="POST":
@@ -75,8 +80,14 @@ def userlogin(request):
 
 
 
+
+
+
+
+
 @login_required
 def dashboard (request):
+    prediction = {"class": "", "confidence": "", "display": "none"}
     if request.method=="POST":
         if 'upload' in request.POST:
             img_file=request.FILES['imgfile']
@@ -86,5 +97,19 @@ def dashboard (request):
 
             data=ImageUpload(img=img_file,img_id=dis)
             data.save()
+
+            prediction = predict("media/testing_image/" + str(img_file))
+            with open('media/predict.txt', 'w') as file:
+                file.write(prediction[0] + "\n" + prediction[1])
+
             return redirect(request.path_info)
-    return render(request,'app/dashboard.html')
+    if os.path.exists('media/predict.txt'):
+        with open('media/predict.txt', 'r') as file:
+            prediction = file.read().split('\n')
+            prediction = {"class": prediction[0], "confidence": prediction[1]}
+        os.remove('media/predict.txt')
+    context = {
+        'prediction': prediction
+    }
+
+    return render(request,'app/dashboard.html', context)

@@ -59,6 +59,12 @@
                 <h4>Upload the Image</h4>
                 <input type="file" name="imgfile" class="form-control-file" id="exampleFormControlFile1" required>
                 <button class="btn my-4" style="background:#E980B0; color:white;" type="submit" name="upload" >Find the result</button>
+
+
+
+                <p style="display: {{ prediction.display }};">Prediction: {{ prediction.class }} with confidence: {{ prediction.confidence }}</p>
+                
+                       
             </div>
         </form>
 </center>
