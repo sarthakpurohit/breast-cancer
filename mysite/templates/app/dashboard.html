@@ -55,25 +55,20 @@
 
 <center>
 
-      <form>
-  <div class="form-group">
-  <label for="exampleFormControlFile1">Insert file</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-      </div>
-</form>
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="form-group">
+                <h4>Upload the Image</h4>
+                <input type="file" name="imgfile" class="form-control-file" id="exampleFormControlFile1" required>
+                <button class="btn my-4" style="background:#E980B0; color:white;" type="submit" name="upload" >Find the result</button>
+            </div>
+        </form>
 </center>
    </div>
       </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
 
 
 

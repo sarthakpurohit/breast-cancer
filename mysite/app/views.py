@@ -12,7 +12,7 @@ from django.contrib import messages
 from email_validator import validate_email, EmailNotValidError
 from django.contrib.staticfiles.storage import staticfiles_storage
 # Create your views here.
-
+from .models import ImageUpload
 # Create your views here.
 def index(request):
     if request.method=="POST":
@@ -81,4 +81,14 @@ def userlogin(request):
 
 @login_required
 def dashboard (request):
+    if request.method=="POST":
+        if 'upload' in request.POST:
+            img_file=request.FILES['imgfile']
+            count=ImageUpload.objects.count()
+            count=count+1
+            dis="img"+str(count)
+
+            data=ImageUpload(img=img_file,img_id=dis)
+            data.save()
+            return redirect(request.path_info)
     return render(request,'app/dashboard.html')
