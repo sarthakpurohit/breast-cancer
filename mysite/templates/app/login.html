@@ -7,7 +7,7 @@
       <div class="container">
         <a class="navbar-brand" href="#home">
           <img src="{% static 'img/hacklogo.png' %}" width="50" height="50" alt="">
-          <h3 class="d-inline align-middle">Mizuxe</h3>
+          <h3 class="d-inline align-middle">Pink Ribbon</h3>
         </a>
         <button class="navbar-toggler" type="button" name="button" data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
@@ -49,6 +49,7 @@
 
                       <form name="from1" method="POST" >
                         {% csrf_token %}
+                        {% include 'partials/_alerts.html' %}
                         <div class="uk-margin">
                           <div class="uk-inline uk-width-1-1">
                             <span class="uk-form-icon" uk-icon="icon: user"></span>
@@ -83,6 +84,7 @@
                       <h3 class="uk-card-title uk-text-center">Welcome back!</h3>
                       <form name="from2" method="POST">
                         {% csrf_token %}
+                        {% include 'partials/_alerts.html' %}
                         <div class="uk-margin">
                           <div class="uk-inline uk-width-1-1">
                             <span class="uk-form-icon" uk-icon="icon: mail"></span>
@@ -95,7 +97,7 @@
                             <input class="uk-input uk-form-large" name="password" type="password" placeholder="Password">
                           </div>
                         </div>
-                      
+
                         <button class="uk-button uk-button-large uk-width-1-1" name="login" type="submit" style="background-color:#E980B0; color:white;">Login</button>
                         <div class="uk-margin">
                         </div>

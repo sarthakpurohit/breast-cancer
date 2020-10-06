@@ -13,6 +13,7 @@ from email_validator import validate_email, EmailNotValidError
 from django.contrib.staticfiles.storage import staticfiles_storage
 # Create your views here.
 from .models import ImageUpload
+from django.contrib import messages
 # Create your views here.
 def index(request):
     if request.method=="POST":
@@ -20,7 +21,7 @@ def index(request):
         if 'newsrequest' in request.POST:
             email=request.POST['email']
             name=request.POST['name']
-            mail_subject = "[Activate Account] VE - Virtual Employee"
+            mail_subject = "[NewsLetter Subscription] Pink Ribbon - Digital Nerds"
             current_site = get_current_site(request)
             message = render_to_string('app/email.html', {
                 'user': email,
@@ -29,9 +30,6 @@ def index(request):
                 # 'pass': role_user_password,
             })
             email = EmailMessage(mail_subject, message, from_email=EMAIL_HOST_USER, to=[email])
-            url = staticfiles_storage.url('img/book.png')
-            # path=open(url,rb);
-            email.attach("book.png","../static/img/book.png")
             email.send()
             return redirect(request.path_info)
 
@@ -46,7 +44,7 @@ def userlogin(request):
             username=email
 
             if User.objects.filter(username=username).exists():
-                # messages.error(request,'That username is already taken')
+                messages.error(request,'That username is already taken')
                 return redirect('userlogin')
             else:
                 user = User.objects.create_user(username=email,password=password,email=email,first_name=name,last_name=name)
@@ -56,7 +54,7 @@ def userlogin(request):
                 # addusr = UserDetails(user_id=u_id,number=number,address=address)
                 # addusr.save()
 
-                # messages.success(request,'You are now registered and can log in')
+                messages.success(request,'You are now registered and can log in')
                 return redirect('userlogin')
 
         if 'login' in request.POST:
@@ -66,15 +64,13 @@ def userlogin(request):
             user = auth.authenticate(username=username,password=password)
             if user is not None:
                 auth.login(request,user)
-                print("Success")
                 return redirect('/dashboard/')
             else:
-                # messages.error(request,"Invalid Credentials")
+                messages.error(request,"Invalid Credentials")
                 print("fail")
                 return redirect('dashboard')
         else:
             return render(request,'app/userlogin.html')
-    # print("outcfsdfs")
     return render(request,'app/login.html')
 
 

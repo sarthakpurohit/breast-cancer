@@ -156,3 +156,9 @@ MESSAGE_TAGS = {
 # EMAIL_HOST_USER='elcteamdigitalnerds@gmail.com'
 # EMAIL_HOST_PASSWORD='elcteam@2020'
 # EMAIL_USE_TLS=True
+
+# Django Alerts Messages
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
