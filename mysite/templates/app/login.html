@@ -15,13 +15,11 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-items">
-              <a class="nav-link" href="#home">Home</a>
+              <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
+
             <li class="nav-items">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-items">
-              <a class="nav-link" href="{% url 'userlogin' %}">Doctor Login</a>
+              <a  class="btn mt-2 " style="background:#E980B0; color:white;" href="{% url 'userlogin' %}">Doctor Login</a>
             </li>
 
           </ul>
@@ -69,11 +67,9 @@
                             <input class="uk-input uk-form-large" name="password" type="password" placeholder="Set a password">
                           </div>
                         </div>
-                        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-                          <label><input class="uk-checkbox" type="checkbox"> I agree the Terms and Conditions.</label>
-                        </div>
+
                         <div class="uk-margin">
-                          <button class="uk-button uk-button-large uk-width-1-1"  name="create" type="submit" style="background-color:#E980B0">Create Account</button>
+                          <button class="uk-button uk-button-large uk-width-1-1"  name="create" type="submit" style="background-color:#E980B0; color:white;">Create Account</button>
                         </div>
 
 
@@ -102,7 +98,7 @@
                         <div class="uk-margin uk-text-right@s uk-text-center uk-text-small">
                           <a href="#" uk-switcher-item="2">Forgot Password?</a>
                         </div>
-                        <button class="uk-button uk-button-large uk-width-1-1" name="login" type="submit" style="background-color:#E980B0">Login</button>
+                        <button class="uk-button uk-button-large uk-width-1-1" name="login" type="submit" style="background-color:#E980B0; color:white;">Login</button>
                         <div class="uk-margin">
                         </div>
                         <div class="uk-text-small uk-text-center">
@@ -142,7 +138,17 @@
     <img src="{% static 'img/form_image.jpg'%}" alt="" style="margin-top:7%">
   </div>
   </div>
-
+  <script type="text/javascript">
+      (function(d, m){
+          var kommunicateSettings =
+              {"appId":"1d5e40dba808e4c7ccf0dc4a7fef53a39","popupWidget":true,"automaticChatOpenOnNavigation":true};
+          var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+          s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+          var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+          window.kommunicate = m; m._globals = kommunicateSettings;
+      })(document, window.kommunicate || {});
+  /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+  </script>
 
 
 
