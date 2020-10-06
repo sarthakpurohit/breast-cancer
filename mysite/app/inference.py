@@ -2,7 +2,9 @@ import torch
 import PIL
 import numpy as np
 
-def process_image(image):    
+model = torch.load('./tumor_resnet50.pt' , map_location=torch.device('cpu'))
+
+def process_image(image):
     img=PIL.Image.open(image)
     w,h = img.size
     if(w<h):
@@ -31,7 +33,7 @@ def process_image(image):
 
 
 def predict(image_path):
-    img = process_image(image_path)   
+    img = process_image(image_path)
     img = torch.from_numpy(img)
     img.unsqueeze_(0)
     img = img.float()
@@ -39,16 +41,16 @@ def predict(image_path):
         model.eval()
         logps = model(img)
         ps = torch.exp(logps)
-        top_p,top_index = ps.topk(2 , dim=1)        
+        top_p,top_index = ps.topk(2 , dim=1)
 
-        
+
         #top_p=top_p.cpu().numpy()[0]
         top_p=top_p.numpy()[0]
         top_p /= sum(top_p)
-          
+
         #top_index=top_index.cpu().numpy()[0]
         top_index=top_index.numpy()[0]
-        
-        
+
+
         classes = ['benign', 'malignant']
         return classes[top_index[0]], str(round(top_p[0]*100.0,2)) + '%'
